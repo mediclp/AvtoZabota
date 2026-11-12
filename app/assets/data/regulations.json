@@ -1,0 +1,262 @@
+{
+  "_note": "sourced=true — интервал взят из таблицы регламента ТО auto.ru (агрегатор, данные на ноябрь 2026, бензиновые версии). sourced=false — значение подставлено по умолчанию, его нужно найти. Перед релизом сверить с сервисными книжками производителей. Колодки нигде не указаны в таблицах: проверяются на каждом ТО.",
+  "regulations": [
+    {
+      "id": "generic", "make": "*", "model": "*",
+      "source": "Осторожные общие интервалы, если модели нет в справочнике",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 10000, "interval_months": 12},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 20000, "interval_months": 24},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 10000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 40000, "interval_months": 24},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 30000, "interval_months": 24}
+      ]
+    },
+
+    {
+      "id": "lada_granta", "make": "Lada", "model": "Granta", "year_from": 2011,
+      "source": "https://auto.ru/catalog/cars/vaz/granta/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 15000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 45000, "interval_months": 36, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true}
+      ]
+    },
+    {
+      "id": "lada_vesta", "make": "Lada", "model": "Vesta", "year_from": 2015,
+      "source": "https://auto.ru/catalog/cars/vaz/vesta/reglament-to/ (Vesta I и NG одинаково)",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 15000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 45000, "interval_months": 36, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true}
+      ]
+    },
+    {
+      "id": "lada_largus", "make": "Lada", "model": "Largus", "year_from": 2012,
+      "source": "https://auto.ru/catalog/cars/vaz/largus/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 15000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 45000, "interval_months": 36, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true}
+      ]
+    },
+
+    {
+      "id": "kia_rio", "make": "Kia", "model": "Rio", "year_from": 2011, "year_to": 2023,
+      "source": "https://auto.ru/catalog/cars/kia/rio/reglament-to/ ; масло и салонный фильтр — https://www.avtogermes.ru/servis/kia/rio/obsluzhivanie/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 48000, "interval_months": 24, "sourced": true, "note": "дилер проверяет фильтр на каждом ТО"},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true, "note": "auto.ru даёт 30/2 для части модификаций Rio; тормозная система от двигателя не зависит; совпадает с регламентом Kia Sportage"},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 48000, "interval_months": 24, "sourced": true}
+      ]
+    },
+    {
+      "id": "kia_sportage", "make": "Kia", "model": "Sportage", "year_from": 2015,
+      "engines": [
+        {"id": "2.0_mpi",  "title": "2.0 MPI (атмосферный)"},
+        {"id": "1.6_tgdi", "title": "1.6 T-GDI (турбо)"}
+      ],
+      "source": "https://auto.ru/catalog/cars/kia/sportage/reglament-to/ ; воздушный фильтр и тормозная жидкость — https://www.avtogermes.ru/servis/kia/sportage/obsluzhivanie/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true, "note": "у дилера 15 000 км / 12 мес; взят более частый интервал auto.ru"},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 45000, "interval_months": 36, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 10000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 40000, "interval_months": 24,
+         "note": "двигатель не указан — взят самый частый интервал",
+         "by_engine": {
+           "1.6_tgdi": {"interval_km": 40000, "interval_months": 24, "sourced": true, "note": "auto.ru, Sportage 1.6 T-GDI"},
+           "2.0_mpi":  {"interval_km": 150000, "sourced": true, "note": "руководство Kia (ownersmanual.kia.com) для двигателя Nu 2.0 MPI; срок в месяцах не указан"}
+         }}
+      ]
+    },
+    {
+      "id": "hyundai_solaris", "make": "Hyundai", "model": "Solaris", "year_from": 2010, "year_to": 2022,
+      "source": "https://auto.ru/catalog/cars/hyundai/solaris/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 15000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true}
+      ]
+    },
+    {
+      "id": "hyundai_creta", "make": "Hyundai", "model": "Creta", "year_from": 2016,
+      "source": "https://auto.ru/catalog/cars/hyundai/creta/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 15000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 120000, "interval_months": 96, "sourced": true}
+      ]
+    },
+    {
+      "id": "volkswagen_polo", "make": "Volkswagen", "model": "Polo", "year_from": 2010, "year_to": 2022,
+      "source": "https://auto.ru/catalog/cars/volkswagen/polo/reglament-to/ (седан V и лифтбек VI)",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 15000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true}
+      ]
+    },
+    {
+      "id": "skoda_rapid", "make": "Skoda", "model": "Rapid", "year_from": 2012, "year_to": 2023,
+      "source": "https://auto.ru/catalog/cars/skoda/rapid/reglament-to/ (бензин)",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 15000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true, "note": "для бензина в таблице нет; 30/2 указано для дизельного Rapid и для VW Polo седан той же платформы, тормозная система от двигателя не зависит"},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 60000, "interval_months": 48, "sourced": true}
+      ]
+    },
+    {
+      "id": "renault_logan", "make": "Renault", "model": "Logan", "year_from": 2004, "year_to": 2022,
+      "source": "https://auto.ru/catalog/cars/renault/logan/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 15000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 90000, "interval_months": 72, "sourced": true, "note": "необычно долгий интервал — сверить с книжкой"},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true}
+      ]
+    },
+    {
+      "id": "toyota_camry", "make": "Toyota", "model": "Camry", "year_from": 2011,
+      "source": "https://auto.ru/catalog/cars/toyota/camry/reglament-to/ (XV50, XV70, XV80)",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 40000, "interval_months": 48, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 30000, "interval_months": 24, "sourced": true, "note": "европейский регламент Camry 2.5 (maintenanceschedule.com/?p=16231); для России сверить"},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 10000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 40000, "interval_months": 24, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 105000, "interval_months": 84, "sourced": true, "note": "европейский регламент Camry 2.5 (maintenanceschedule.com/?p=16231); для России сверить"}
+      ]
+    },
+    {
+      "id": "toyota_rav4", "make": "Toyota", "model": "RAV4", "year_from": 2012,
+      "source": "https://auto.ru/catalog/cars/toyota/rav_4/reglament-to/",
+      "engines": [
+        {"id": "2.0",        "title": "2.0 бензин"},
+        {"id": "hybrid_2.5", "title": "2.5 гибрид"}
+      ],
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 40000, "interval_months": 48, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 20000, "interval_months": 24, "sourced": true,
+         "note": "двигатель не указан — взят более частый интервал (гибрид)",
+         "by_engine": {
+           "2.0":        {"interval_km": 30000, "interval_months": 36, "sourced": true},
+           "hybrid_2.5": {"interval_km": 20000, "interval_months": 24, "sourced": true}
+         }},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 10000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 40000, "interval_months": 24, "sourced": true,
+         "by_engine": {
+           "hybrid_2.5": {"interval_km": 40000, "interval_months": 48, "sourced": true}
+         }},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 20000, "interval_months": 24, "sourced": true,
+         "note": "для 2.0 бензин; двигатель не указан — берётся этот, более частый интервал",
+         "by_engine": {
+           "2.0":        {"interval_km": 20000, "interval_months": 24, "sourced": true, "note": "необычно короткий интервал для иридиевых свечей — сверить с книжкой"},
+           "hybrid_2.5": {"interval_km": 100000, "interval_months": 120, "sourced": true}
+         }}
+      ]
+    },
+
+    {
+      "id": "haval_jolion", "make": "Haval", "model": "Jolion", "year_from": 2021,
+      "source": "https://auto.ru/catalog/cars/haval/jolion/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true, "note": "по словам сервисменов, производитель рекомендует ТО каждые 10 000 км — сверить"},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 15000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 15000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 45000, "interval_months": 24, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 55000, "interval_months": 48, "sourced": true}
+      ]
+    },
+    {
+      "id": "haval_f7", "make": "Haval", "model": "F7", "year_from": 2018,
+      "source": "https://auto.ru/catalog/cars/haval/f7/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 30000, "interval_months": 36, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 20000, "interval_months": 24, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 10000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 40000, "interval_months": 24, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 60000, "interval_months": 72, "sourced": true}
+      ]
+    },
+    {
+      "id": "chery_tiggo_7_pro_max", "make": "Chery", "model": "Tiggo 7 Pro Max", "year_from": 2022,
+      "source": "https://auto.ru/catalog/cars/chery/tiggo_7_pro_max/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 10000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 40000, "interval_months": 24, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 30000, "interval_months": 36, "sourced": true}
+      ]
+    },
+    {
+      "id": "chery_tiggo_4_pro", "make": "Chery", "model": "Tiggo 4 Pro", "year_from": 2020,
+      "source": "https://auto.ru/catalog/cars/chery/tiggo_4_pro/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 20000, "interval_months": 24, "sourced": true, "note": "дилер: замена на ТО-2 (20 000 км), https://www.avtogermes.ru/servis/chery/tiggo-4-pro/obsluzhivanie/reglament-to/ ; срок в месяцах не указан, взято 24"},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 10000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 40000, "interval_months": 48, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 30000, "interval_months": 36, "sourced": true}
+      ]
+    },
+    {
+      "id": "geely_coolray", "make": "Geely", "model": "Coolray", "year_from": 2019,
+      "source": "https://auto.ru/catalog/cars/geely/coolray/reglament-to/ ; фильтры — https://www.avtogermes.ru/servis/geely/coolray/obsluzhivanie/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 20000, "interval_months": 24, "sourced": true, "note": "дилер: замена на ТО-2 (20 000 км); срок в месяцах не указан, взято 24"},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 20000, "interval_months": 24, "sourced": true, "note": "дилер: замена на ТО-2 (20 000 км); срок в месяцах не указан, взято 24"},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 10000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 40000, "interval_months": 24, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 30000, "interval_months": 24, "note": "интервал нигде не опубликован, дилер: «строго по регламенту»; узнать у дилера Geely"}
+      ]
+    },
+    {
+      "id": "geely_monjaro", "make": "Geely", "model": "Monjaro", "year_from": 2021,
+      "source": "https://auto.ru/catalog/cars/geely/monjaro/reglament-to/ ; воздушный фильтр — https://www.avtogermes.ru/servis/geely/monjaro/obsluzhivanie/reglament-to/",
+      "items": [
+        {"consumable": "engine_oil",   "action": "replace", "interval_km": 10000, "interval_months": 12, "sourced": true},
+        {"consumable": "air_filter",   "action": "replace", "interval_km": 20000, "interval_months": 24, "sourced": true, "note": "дилер: «замена каждые 20 000 км»; срок в месяцах не указан, взято 24, как у салонного"},
+        {"consumable": "cabin_filter", "action": "replace", "interval_km": 20000, "interval_months": 24, "sourced": true},
+        {"consumable": "brake_pads",   "action": "inspect", "interval_km": 10000, "interval_months": 12},
+        {"consumable": "brake_fluid",  "action": "replace", "interval_km": 40000, "interval_months": 24, "sourced": true},
+        {"consumable": "spark_plugs",  "action": "replace", "interval_km": 40000, "interval_months": 48, "sourced": true}
+      ]
+    }
+  ]
+}

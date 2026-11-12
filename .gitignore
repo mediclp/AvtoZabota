@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+
+# Редакторы и ОС
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Flutter-специфичное — в app/.gitignore
